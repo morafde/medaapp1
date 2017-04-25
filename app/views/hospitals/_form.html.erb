@@ -1,4 +1,4 @@
-<%= form_for(hospital) do |f| %>
+<%= form_for(hospital, :html => { multipart: true }) do |f| %>
   <% if hospital.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(hospital.errors.count, "error") %> prohibited this hospital from being saved:</h2>
@@ -29,6 +29,10 @@
   <div class="form-group">
     <%= f.label :website %>
     <%= f.text_field :website, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <div class="actions">
