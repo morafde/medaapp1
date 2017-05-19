@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_hospital
   before_action :authenticate_user!
 
   # GET /reviews/new
@@ -16,6 +17,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
+    @review.hospital_id = @hospital.id
 
     respond_to do |format|
       if @review.save
@@ -61,5 +63,9 @@ class ReviewsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
       params.require(:review).permit(:rating, :comment)
+    end
+
+    def set_hospital
+      @hospital = Hospital.find(params[:hospital_id])
     end
 end
