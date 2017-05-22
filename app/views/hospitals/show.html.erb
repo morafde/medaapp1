@@ -16,5 +16,7 @@
   <%= @hospital.website %>
 </p>
 
+<%= link_to "Write a Review", new_hospital_review_path(@hospital), class: "btn btn-primary" %>
+
 <%= link_to 'Edit', edit_hospital_path(@hospital), class: "btn btn-link" %> |
 <%= link_to 'Back', hospitals_path, class: "btn btn-link" %>
