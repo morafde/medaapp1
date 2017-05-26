@@ -1,7 +1,8 @@
 <%= form_for(hospital, :html => { multipart: true }) do |f| %>
   <% if hospital.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(hospital.errors.count, "error") %> prohibited this hospital from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(hospital.errors.count, "error") %> prohibited this hospital from being saved:</h4>
 
       <ul>
       <% hospital.errors.full_messages.each do |message| %>
@@ -13,20 +14,20 @@
 
   <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name, class: "form-control", placeholder: "The Healing Room" %>
   </div>
 
   <div class="form-group">
     <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control" %>
+    <%= f.text_field :address, class: "form-control", placeholder: "36, ebinpejo lane, Lagos, Nigeria" %>
   </div>
   <div class="form-group">
     <%= f.label :phone %>
-    <%= f.text_field :phone, class: "form-control" %>
+    <%= f.text_field :phone, class: "form-control", placeholder: "012773000 or 08099999999" %>
   </div>
   <div class="form-group">
     <%= f.label :website %>
-    <%= f.text_field :website, class: "form-control" %>
+    <%= f.text_field :website, class: "form-control", placeholder:"https://thisihowtodoit.com/" %>
   </div>
   <div class="form-group">
     <%= f.label :image %>
