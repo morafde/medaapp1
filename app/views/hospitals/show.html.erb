@@ -26,6 +26,12 @@
 
 <%= link_to "Write a Review", new_hospital_review_path(@hospital), class: "btn btn-primary" %>
 
+<br>
+<br>
+
+  <iframe width="230" height="230" frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?q=<%= @hospital.address.parameterize %>&key=AIzaSyAc4mTzAGIA_8JFXAcL3XTBi-tzuxQCsBc" allowfullscreen></iframe>
+
   </div>
 
   <div class="col-md-9">
@@ -60,6 +66,7 @@
                   <%= link_to "Delete", hospital_review_path(@hospital, review), method: :delete %>
                 <% end %>
               <% end %>
+
               </td>
             </tr>
           <% end %>
