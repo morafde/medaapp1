@@ -1,5 +1,7 @@
 class HospitalsController < ApplicationController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
 
   # GET /hospitals
   # GET /hospitals.json
@@ -72,6 +74,12 @@ class HospitalsController < ApplicationController
     def set_hospital
       @hospital = Hospital.find(params[:id])
     end
+
+    def check_user
+    unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that!"
+    end
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hospital_params
