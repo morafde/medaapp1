@@ -1,7 +1,15 @@
 class HospitalsController < ApplicationController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :check_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:search, :index, :show]
+  before_action :check_user, except: [:search, :index, :show]
+
+  def search
+    if params[:search].present?
+      @hospitals = Hospital.search(params[:search])
+    else
+      @hospitals = Hospital.all
+    end
+  end
 
   # GET /hospitals
   # GET /hospitals.json
