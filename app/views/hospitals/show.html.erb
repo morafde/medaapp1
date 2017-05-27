@@ -1,42 +1,41 @@
 <div class="row">
   <div class="col-md-3">
-  <%= image_tag @hospital.image_url %>
+    <%= image_tag @hospital.image_url %>
 
-<h3>
-  <%= @hospital.name %>
-</h3>
+    <h3>
+      <%= @hospital.name %>
+    </h3>
 
-<div class="star-rating" data-score= <%= @avg_rating %> ></div>
-<p><%= "#{@reviews.length} reviews" %></p>
+    <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+    <p><%= "#{@reviews.length} reviews" %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @hospital.address %>
-</p>
+    <p>
+      <strong>Address:</strong>
+      <%= @hospital.address %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @hospital.phone %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @hospital.phone %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= link_to @hospital.website, @hospital.website %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= link_to @hospital.website, @hospital.website %>
+    </p>
 
-<%= link_to "Write a Review", new_hospital_review_path(@hospital), class: "btn btn-primary" %>
+    <%= link_to "Write a Review", new_hospital_review_path(@hospital), class: "btn btn-primary" %>
 
-<br>
-<br>
+    <br>
+    <br>
 
-  <iframe width="230" height="230" frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?q=<%= @hospital.address.parameterize %>&key=AIzaSyC49Pbs0mEFskxlp3Cvrng346RMldL0GEk" allowfullscreen></iframe>
-
+    <iframe width="230" height="230" frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?q=<%= @hospital.address.parameterize %>&key=AIzaSyAc4mTzAGIA_8JFXAcL3XTBi-tzuxQCsBc" allowfullscreen></iframe>
   </div>
 
   <div class="col-md-9">
     <% if @reviews.blank? %>
-      <h3> No Reviews yet. Be the first to write one!</h3>
+      <h3>No reviews yet. Be the first to write one!</h3>
     <% else %>
       <table class="table">
         <thead>
@@ -49,14 +48,14 @@
         <tbody>
           <% @reviews.each do |review| %>
             <tr>
-              
+              <td>
                 <h4>
                   <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
                 </h4>
                 <p><%= review.created_at.strftime("%-d/%-m/%y") %></p>
-              
-                 
               </td>
+
+              <td>
                 <div class="star-rating" data-score= <%= review.rating %> ></div>
                 <p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
 
@@ -66,13 +65,12 @@
                   <%= link_to "Delete", hospital_review_path(@hospital, review), method: :delete %>
                 <% end %>
               <% end %>
-
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-  <% end %>
+    <% end %>
   </div>
 </div>
 
@@ -85,6 +83,6 @@
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
-    } 
+    }
   });
 </script>
