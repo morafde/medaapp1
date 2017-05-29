@@ -53,4 +53,13 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   # Required for Devise Gem
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+ActionMailer::Base.smtp_settings = {
+  :user_name => 'app67126170@heroku.com',
+  :password => 'qnwxyolf5337',
+  :domain => 'yourdomain.com',
+  :address => 'smtp.sendgrid.net',
+  :port => 587,
+  :authentication => :plain,
+  :enable_starttls_auto => true
+}
 end
