@@ -21,6 +21,16 @@
     <%= f.label :address %>
     <%= f.text_field :address, class: "form-control", placeholder: "36, ebinpejo lane, Lagos, Nigeria" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :city_town %><br>
+    <%= f.select :city_town, [ 'Ikeja','Lekki','VI' ], :prompt => 'Select One' %>
+  <div>
+  <div class="form-group">
+    <%= f.label :state %><br>
+    <%= f.select :state, [ 'Lagos'], :prompt => 'Select One' %>
+  <div>
+
   <div class="form-group">
     <%= f.label :phone %>
     <%= f.text_field :phone, class: "form-control", placeholder: "012773000 or 08099999999" %>
@@ -29,6 +39,24 @@
     <%= f.label :website %>
     <%= f.text_field :website, class: "form-control", placeholder:"https://thisihowtodoit.com/" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :safe_care %><br>
+    <%= f.select :safe_care, [ 'No','Yes',], :prompt => 'Select One' %>
+  <div>
+  <div class="form-group">
+    <%= f.label :jci %><br>
+    <%= f.select :jci, [ 'No','Yes',], :prompt => 'Select One' %>
+  <div>
+  <div class="form-group">
+    <%= f.label :cohsasa %><br>
+    <%= f.select :cohsasa, [ 'No','Yes',], :prompt => 'Select One' %>
+  <div>
+  <div class="form-group">
+    <%= f.label :best_known_4 %><br>
+    <%= f.select :best_known_4, [ 'Maternity','Emergency Response', 'Surgery', 'Eye Care'], :prompt => 'Select One' %>
+  <div>
+
   <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, class: "form-control" %>

@@ -10,16 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524161226) do
+ActiveRecord::Schema.define(version: 20170529093906) do
 
   create_table "hospitals", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.string   "phone"
     t.string   "website"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "image"
+    t.string   "city_town"
+    t.string   "state"
+    t.string   "jci"
+    t.string   "cohsasa"
+    t.string   "best_known_4"
+    t.string   "safe_care"
   end
 
   create_table "reviews", force: :cascade do |t|
