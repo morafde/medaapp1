@@ -92,10 +92,10 @@ config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"    
 
-ActionMailer::Base.smtp_settings = {
-  :user_name => 'app67126170@heroku.com',
-  :password => 'qnwxyolf5337',
-  :domain => 'yourdomain.com',
+ActionMailer::Base.smtp_settings = {                        # required
+  :user_name      => ENV["user_name"],                        # required
+  :password  => ENV["password"],                        # required
+  :domain => 'medappp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
   :authentication => :plain,
