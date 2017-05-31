@@ -54,9 +54,9 @@ Rails.application.configure do
   # Required for Devise Gem
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-ActionMailer::Base.smtp_settings = {
-  :user_name => 'app67126170@heroku.com',
-  :password => 'qnwxyolf5337',
+ActionMailer::Base.smtp_settings = {                        # required
+  :user_name      => ENV["user_name"],                        # required
+  :password  => ENV["password"],                        # required
   :domain => 'medappp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,
