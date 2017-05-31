@@ -35,3 +35,4 @@ gem "mini_magick"
 gem "devise"
 gem 'searchkick'
 gem 'sendgrid'
+gem 'tawk_rails'
