@@ -21,7 +21,7 @@
 
     <p>
       <strong>Website:</strong>
-      <%= link_to @hospital.website, @hospital.website %>
+      <%= link_to @hospital.website, @hospital.website, target: :_blank %>
     </p>
 
     <%= link_to "Write a Review", new_hospital_review_path(@hospital), class: "btn btn-primary" %>

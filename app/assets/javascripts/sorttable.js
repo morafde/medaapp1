@@ -1,5 +1,10 @@
 $(document).ready(function(){
   (function vendorTableSorter(){ 
+
+    $(document).on('turbolinks:load', named_function );
+var named_function = function() {
+    // thinks to do on document load
+}
     /*
   SortTable
   version 1
