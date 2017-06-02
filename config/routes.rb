@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :hospitals do
     collection do
       get 'search'
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'pages/about'
 
   get 'pages/contact'
+
+  get '/auth/:provider/callback', to: 'sessions#create'
   
   root'hospitals#index'
 

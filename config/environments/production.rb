@@ -93,8 +93,8 @@ config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"    
 
 ActionMailer::Base.smtp_settings = {                        # required
-  :user_name      => ENV["user_name"],                        # required
-  :password  => ENV["password"],                        # required
+  :user_name      => ENV["SENDGRID_USERNAME"],                        # required
+  :password  => ENV["SENDGRID_PASSWORD"],                        # required
   :domain => 'medappp.com',
   :address => 'smtp.sendgrid.net',
   :port => 587,

@@ -42,3 +42,4 @@ gem 'jquery-datatables-rails', '~> 3.4.0'
 gem 'autoprefixer-rails'
 gem 'execjs'
 gem "bootstrap-table-rails"
+gem 'omniauth-facebook'
