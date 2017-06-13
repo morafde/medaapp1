@@ -276,8 +276,16 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   
   # Add your ID and Secret Here
-config.omniauth :facebook, ENV["FR_FACEBOOK_KEY"], ENV["R_FACEBOOK_SECRET"],
-token_params: { parse: :json } # <----- this line is NB
+config.omniauth :facebook, ENV["FR_FACEBOOK_KEY"], ENV["FR_FACEBOOK_SECRET"], scope: 'email', info_fields: 'email,first_name,last_name', client_options: {
+site: 'https://graph.facebook.com/v2.9',
+authorize_url: "https://www.facebook.com/v2.9/dialog/oauth"
+}, token_params: { parse: :json } 
+
+
+#info_fields: 'email,first_name,last_name' 
+
+
+#token_params: { parse: :json } # <----- this line is NB
                 
 
 end

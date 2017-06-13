@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
   resources :hospitals do
     collection do
       get 'search'
     end
     resources :reviews, except: [:show, :index]
   end
+
+
 
   get 'pages/Hospitals'
 
@@ -18,7 +20,12 @@ Rails.application.routes.draw do
 
   get 'pages/contact'
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  #get '/auth/facebook/callback' => 'sessions#create'
+
+  #get '/signout' => 'sessions#destroy', :as => :signout
+
+  #get '/signin' => 'sessions#new', :as => :signin
+
   
   root'hospitals#index'
 
