@@ -8,8 +8,6 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :reviews, except: [:show, :index]
-    resources :homes, only: [:show]
-    root to: "homes#show"
     end
   
 
