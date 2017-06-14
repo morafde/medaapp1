@@ -201,6 +201,8 @@ GEM
       hashie
     sendgrid (1.2.4)
       json
+    social-share-button (0.10.0)
+      coffee-rails
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -263,6 +265,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   searchkick
   sendgrid
+  social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3

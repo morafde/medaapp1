@@ -21,15 +21,6 @@ def self.from_omniauth(auth)
 
 end
 
-  #def self.from_omniauth(auth)
-  #where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-    #user.email = auth.info.email
-    #user.password = Devise.friendly_token[0,20]
-    #user.name = auth.info.name   # assuming the user model has a name
-    #user.image = auth.info.image # assuming the user model has an image
-    # If you are using confirmable and the provider(s) you use validate emails, 
-    # uncomment the line below to skip the confirmation emails.
-    # user.skip_confirmation!
   end
 
   def self.new_with_session(params, session)
@@ -42,48 +33,8 @@ end
     end
   end
 
-  #def self.find_for_oauth(auth, signed_in_resource = nil)
-  #end
-
-  #def self.create_with_omniauth(auth)
-   #create! do |user|
-     #user.provider = auth['provider']
-     #user.uid = auth['uid']
-     #if auth['info']
-       #user.name = auth['info']['name'] || ""
-       #user.email = auth['info']['email'] || ""
-     #end
-   #end
- #end
-
-
-  #def self.from_omniauth(auth)
-    #email = auth.info.email
-    #user = User.find_by(email: email) if email
-    #user ||= User.create do |user|
-              #user.provider= auth.provider
-              #user.uid= auth.uid
-              #user.email = auth.info.email
-              #user.password = Devise.friendly_token[0,20]
-              #user.name = auth.info.name
-              #user.email ||= "#{auth.uid}_#{auth.uid}@email.com"
-            #end
-  #end
-
-
-  #def self.from_omniauth(auth)
-  #where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-   # user.provider = auth.provider
-    #user.uid = auth.uid
-    #user.email = auth.info.email
-    #user.password = Devise.friendly_token[0,20]
-    #user.name = auth.info.name   # assuming the user model has a name
-    #user.image = auth.info.image # assuming the user model has an image
-    # If you are using confirmable and the provider(s) you use validate emails, 
-    # uncomment the line below to skip the confirmation emails.
-    # user.skip_confirmation!
   
-#end
+
 
 
  

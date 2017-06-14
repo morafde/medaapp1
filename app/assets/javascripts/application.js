@@ -21,4 +21,5 @@
 //= require bootstrap-sprockets
 //= require bootstrap-table
 //= require turbolinks
+//= require social-share-button
 //= require_tree .

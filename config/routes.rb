@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   
+  get 'homes/show'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
   resources :hospitals do
     collection do
       get 'search'
     end
     resources :reviews, except: [:show, :index]
-  end
+    resources :homes, only: [:show]
+    root to: "homes#show"
+    end
+  
+
 
 
 
