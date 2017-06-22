@@ -2,6 +2,7 @@ class HospitalsController < ApplicationController
   before_action :set_hospital, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:search, :index, :show]
   before_action :check_user, except: [:search, :index, :show]
+  protect_from_forgery with: :null_session
 
   def search
     if params[:search].present?
@@ -10,6 +11,15 @@ class HospitalsController < ApplicationController
       @hospitals = Hospital.all
     end
   end
+
+  def import
+    Hospital.import(params[:file])
+    redirect_to root_url, notice: "Hospitals imported."
+  end
+
+
+
+
 
   # GET /hospitals
   # GET /hospitals.json

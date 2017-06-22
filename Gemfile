@@ -44,3 +44,4 @@ gem 'execjs'
 gem "bootstrap-table-rails"
 gem 'omniauth-facebook'
 gem 'social-share-button'
+gem 'roo'

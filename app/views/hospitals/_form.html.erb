@@ -61,6 +61,13 @@
     <%= f.label :image %>
     <%= f.file_field :image, class: "form-control" %>
   </div>
+
+<div class="form-group">
+  <%= form_tag root_path, multipart: true do %>
+  <%= file_field_tag :file, class: "form-control" %>
+  <%= submit_tag "Import CSV" %>
+  <div/
+<% end %>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

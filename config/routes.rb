@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
-  get 'homes/show'
+  
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
   resources :hospitals do
     collection do
+      post :import
+
       get 'search'
     end
     resources :reviews, except: [:show, :index]
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
   #get '/signin' => 'sessions#new', :as => :signin
 
   
-  root'hospitals#index'
+  root 'hospitals#index'
 
 
 
