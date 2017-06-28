@@ -3,6 +3,7 @@ class HospitalsController < ApplicationController
   before_action :authenticate_user!, except: [:search, :index, :show]
   before_action :check_user, except: [:search, :index, :show]
   protect_from_forgery with: :null_session
+  protect_from_forgery except: ["create"]
 
   def search
     if params[:search].present?
@@ -13,12 +14,8 @@ class HospitalsController < ApplicationController
   end
 
   def import
-    Hospital.import(params[:file])
-    redirect_to root_url, notice: "Hospitals imported."
+   Hospital.import(params[:file])
   end
-
-
-
 
 
   # GET /hospitals
@@ -50,6 +47,8 @@ class HospitalsController < ApplicationController
   # POST /hospitals
   # POST /hospitals.json
   def create
+    import if params[:file] # <= this here is the call to your import method
+
     @hospital = Hospital.new(hospital_params)
 
     respond_to do |format|
