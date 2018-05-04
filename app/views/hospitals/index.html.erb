@@ -1,7 +1,25 @@
+<div class="jumboFluid">
 <div class="jumbotron">
-  <h2>Find the best HealthCare Options around you with Medapp.</h2>
-  <h3>Explore the best of healthcare available in your community.<br>
-    Read and leave reviews to assist others seeking the best health care and keep our hospitals on their toes.</h3>
+<section class="content">
+
+
+<%= form_tag search_hospitals_path, method: :get, class: "form-group" do %>
+<div class="input-group">
+<div class="input-group-addon">Search</div>
+        <p>
+          <%= text_field_tag :search, params[:search],  class: "form-control formInput", placeholder: "Eye, Maternity" %>
+          <%# <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        </p>
+</div>
+  <% end %><br>
+  
+      
+ 
+  <h3 class="intro2">Find the best HealthCare Options around you with Medapp.
+  <br><%# Explore the best of healthcare available in your community.<br>
+    Read and leave reviews to assist others seeking the best health care and keep our hospitals on their toes. %></h3>
+</section>
+</div>
 </div>
 <h1>Hospitals</h1>
 
