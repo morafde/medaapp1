@@ -47,8 +47,10 @@
   <tbody>
     <% @hospitals.each do |hospital| %>
       <tr>
-        <td><%= link_to hospital.name, hospital %>
+        <td><%= link_to hospital.name, hospital %><br>
+          <%= link_to image_tag(hospital.image), hospital %></td>
         </td> 
+
         <td><%= hospital.address %></td>
         <td><%= hospital.city_town %></td>
         <td><%= hospital.state %></td>
