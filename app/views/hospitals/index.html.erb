@@ -21,145 +21,34 @@
 </section>
 </div>
 </div>
-<<<<<<< HEAD
 <div class="hospitalList">
 <h1 id="hospitalBanner">Hospitals</h1>
 <blockquote> 
   <p class="text-center"><cite>&#8220;Explore the best of healthcare available in your community&#8221;</cite> </p>
 </blockquote>
-=======
-<h1>Hospitals</h1>
->>>>>>> 921b43fcda1d2387f8d0b960b2546e4e88ed0a4e
 
 <% content_for(:body_attributes) do %>
     data-no-turbolink="false"
   <% end %>
-<<<<<<< HEAD
+
 <div class="container-fluid">
-
 <div class="row">
+<% @hospitals.each do |hospital| %>
   <div class="col-md-3">
     <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
+        <%= link_to image_tag(hospital.image), hospital %>
         <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
+          <p> <%= link_to hospital.name, hospital %></p>
+        <p> <%= hospital.phone %></p>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
   </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="https://www.google.com">
-        <img src="http://free-online-marketing-lessons.com/wp-content/uploads/2014/08/Gravatar-icon.png" alt="MedApp Image" style="width:100%">
-        <div class="caption">
-          <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-<%#Table here%>
-=======
+ <% end %>
+ </div>
+ 
 
 
 
-<table class="table table-bordered table-hover sortable">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>City/Town</th>
-      <th>State</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <% if user_signed_in? && current_user.admin? %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hospitals.each do |hospital| %>
-      <tr>
-        <td><%= link_to hospital.name, hospital %><br>
-          <%= link_to image_tag(hospital.image), hospital %></td>
-        </td> 
-
-        <td><%= hospital.address %></td>
-        <td><%= hospital.city_town %></td>
-        <td><%= hospital.state %></td>
-        <td><%= hospital.phone %></td>
-        <td><%= link_to hospital.website, hospital.website, target: :_blank %></td>
-        <% if user_signed_in? && current_user.admin? %>
-         <td><%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %></td>
-          <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
-        <% end%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
->>>>>>> 921b43fcda1d2387f8d0b960b2546e4e88ed0a4e
 <br>
 
 <% if user_signed_in? && current_user.admin? %>
@@ -191,7 +80,4 @@ s0.parentNode.insertBefore(s1,s0);
   });
 </script>
 
-
-
-
-<%= image_tag "https://s3-us-west-2.amazonaws.com/morafamedapp/hospital+background2.jpg" %>
+</div>
