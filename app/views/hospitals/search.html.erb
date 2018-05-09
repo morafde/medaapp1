@@ -1,3 +1,12 @@
+<%= form_tag search_hospitals_path, method: :get, class: "form-group" do %>
+<div class="input-group">
+<div class="input-group-addon">Search and Review</div>
+        <p>
+          <%= text_field_tag :search, params[:search],  class: "form-control formInput", placeholder: "Hospital Name" %>
+          <%# <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        </p>
+</div>
+  <% end %>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -14,7 +23,9 @@
   <tbody>
     <% @hospitals.each do |hospital| %>
       <tr>
-        <td><%= link_to hospital.name, hospital %></td>
+        <td><%= link_to hospital.name, hospital %><br>
+          <%= link_to image_tag(hospital.image), hospital %></td>
+        </td> 
         <td><%= hospital.address %></td>
         <td><%= hospital.phone %></td>
         <td><%= link_to hospital.website, hospital.website %></td>
@@ -26,3 +37,4 @@
     <% end %>
   </tbody>
 </table>
+<br>
