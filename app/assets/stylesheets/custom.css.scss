@@ -8,33 +8,6 @@
 body {
 	width: 100%;
 }
-
-
-/* .jumbotron:before {
-	content: "";
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: -1;
-	
-	display: block;
-	background-image: url('https://b4brands.com/wp-content/uploads/2015/07/slide-hospital.jpg');
-	width: 100%;
-	height: 50%;
-	
-	-webkit-filter: blur(1px);
-	-moz-filter: blur(3px);
-	-o-filter: blur(3px);
-	-ms-filter: blur(3px);
-	filter: blur(1px);
-  }
-  
-  .jumbotron {
-	/* position: fixed; 
-	z-index: 0;
-  } */
-
-
 .jumboFluid {
 	clear: both;
 	background: url("/bg1.jpeg");
@@ -155,6 +128,57 @@ h2 {
 	font-weight: bold;
 	text-shadow: 1px 1px #eee;
 }
+.thumbnail {
+	border: 1px solid #eee;
+}
+.thumbnail a>img{
+	height: 100%;
+	width: 100%;
+}
+.thumbnail caption {
+	color: black;
+}
+.hospital_container {
+	position: relative;
+	width: 100%;
+  }
+  
+.hospital_images {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+  
+.overlay {
+	position: absolute; 
+	bottom: 0; 
+	background: rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.5); /* Black see-through */
+	color: #f1f1f1 !important; 
+	width: 100%;
+	transition: .5s ease;
+	opacity:0;
+	color: white !important;
+	font-size: 20px;
+	padding: 5px !important;
+	text-align: center;
+	margin: 0 !important;
+}
+.overlay p > a {
+	color: white;
+}
+.overlay p > p {
+	color: #999 !important;
+}
+.overlay > p {
+	margin: 0 !important;
+}
+  
+.hospital_container:hover .overlay {
+	opacity: 1;
+}
+
+
 
 /* Sign up page starts here */
 .sign-up-page {
@@ -174,6 +198,6 @@ h2 {
 
 /* Sign in page starts here */
 
-
+//
 
 /* Sign in page ends here */

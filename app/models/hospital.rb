@@ -5,12 +5,11 @@ class Hospital < ApplicationRecord
 
 	has_many :reviews
 
-
-
 	def self.import(file)
   		CSV.foreach(file.path, headers: true) do |row|
     	Hospital.create! row.to_hash
-  end
+	end
+	
 end
 
 validates_uniqueness_of :name
