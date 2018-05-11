@@ -28,6 +28,15 @@
         </td> 
         <td><%= hospital.address %></td>
         <td><%= hospital.phone %></td>
+        <td>
+          <% if hospital.reviews.count == 0 %>
+            No reviews yet
+          <% else %>
+            <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+
+            Review = <%= hospital.avg_rating %>
+          <% end %>
+        </td>
         <td><%= link_to hospital.website, hospital.website %></td>
         <% if user_signed_in? && current_user.admin? %>
          <td><%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %></td>
@@ -38,3 +47,13 @@
   </tbody>
 </table>
 <br>
+
+<script>
+    $('.star-rating').raty({
+        path: 'https://s3-us-west-2.amazonaws.com/morafamedapp/stars',
+        readOnly: true,
+        score: function() {
+            return $(this).attr('data-score');
+        }
+    });
+</script>
