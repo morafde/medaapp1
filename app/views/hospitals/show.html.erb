@@ -6,8 +6,11 @@
       <%= @hospital.name %>
     </h3>
 
-    <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+    <%= @hospital.avg_rating %>
+    
     <p><%= "#{@reviews.length} reviews" %></p>
+
+
     <%= social_share_button_tag("Share") %>
     
 

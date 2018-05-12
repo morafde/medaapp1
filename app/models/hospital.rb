@@ -9,10 +9,19 @@ class Hospital < ApplicationRecord
   		CSV.foreach(file.path, headers: true) do |row|
     	Hospital.create! row.to_hash
 	end
+
+	def avg_rating
+		reviews.average(:rating)
+	end
+
 	
-end
+end 
+
+
 
 validates_uniqueness_of :name
+
+
 
 
 	#validates :name, :address, :phone, presence: true

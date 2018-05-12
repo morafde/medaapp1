@@ -29,23 +29,23 @@
 
 <% content_for(:body_attributes) do %>
     data-no-turbolink="false"
-<% end %>
+  <% end %>
 
 <div class="container-fluid">
 <div class="row">
 <% @hospitals.each do |hospital| %>
-  <div class="col-md-3 col-xs-4 col-xs-6">
-    <div class="thumbnail hospital_container">
-        <%= link_to image_tag(hospital.image), hospital, class: "hospital_image" %>
-        <div class="caption overlay">
-          <p class="text_overlay"> <%= link_to hospital.name, hospital %></p>
-          <p class="text_overlay"> <%= hospital.phone %></p>
-        </div>
+  <div class="col-md-3">
+    <div class="thumbnail">
+        <%= link_to image_tag(hospital.image), hospital %>
+        <div class="caption">
+          <p> <%= link_to hospital.name, hospital %></p>
+          <p> <%= hospital.phone %></p>
+    </div>
   </div>
   </div>
 <% end %>
-</div>
-<div>
+ </div>
+ 
 
 
 
