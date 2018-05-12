@@ -1,18 +1,21 @@
 class Hospital < ApplicationRecord
-	mount_uploader :image, ImageUploader
 
-	searchkick
+  validates_uniqueness_of :name
+  has_many :reviews
 
-	has_many :reviews
+  mount_uploader :image, ImageUploader
 
-	def self.import(file)
-  		CSV.foreach(file.path, headers: true) do |row|
-    	Hospital.create! row.to_hash
-	end
-	
-end
+  # searchkick
 
-validates_uniqueness_of :name
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      Hospital.create! row.to_hash
+    end
+  end
+
+  def avg_rating
+    reviews.average(:rating)
+  end
 
 
 	#validates :name, :address, :phone, presence: true
@@ -22,4 +25,5 @@ validates_uniqueness_of :name
     #only_integer: true,
     #message: "must be land line(7 digits) or Gsm(11 digits)"
 	#}
+
 end
