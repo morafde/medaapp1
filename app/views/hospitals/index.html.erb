@@ -38,8 +38,14 @@
     <div class="thumbnail">
         <%= link_to image_tag(hospital.image), hospital %>
         <div class="caption">
-          <p> <%= link_to hospital.name, hospital %></p>
-          <p> <%= hospital.phone %></p>
+          <p> <%= link_to hospital.name, hospital %></p><br>
+          <% if hospital.reviews.count == 0 %>
+            0 Reviews
+          <% else %>
+            <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+            <%= hospital.length %> <%= "Review(s)" %>
+
+          <% end %>
     </div>
   </div>
   </div>

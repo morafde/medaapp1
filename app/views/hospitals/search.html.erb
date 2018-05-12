@@ -26,11 +26,12 @@
         <td><%= link_to hospital.name, hospital %><br>
           <%= link_to image_tag(hospital.image), hospital %><br>
           <% if hospital.reviews.count == 0 %>
-            No reviews yet, be the first to write one.
+            No reviews yet, be the first to write one
           <% else %>
             <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
 
-            Review = <%= hospital.avg_rating %>
+            <%= hospital.length %> <%= "Review(s)" %>
+
           <% end %></td>
         </td> 
         <td><%= hospital.address %></td>

@@ -14,8 +14,12 @@ class Hospital < ApplicationRecord
   end
 
   def avg_rating
-    reviews.average(:rating)
+    reviews.average(:rating).round(2)
   end
+
+  def length
+  	reviews.count(:rating)
+  end	
 
 
 	#validates :name, :address, :phone, presence: true
