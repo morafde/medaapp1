@@ -30,21 +30,23 @@
 <% content_for(:body_attributes) do %>
     data-no-turbolink="false"
   <% end %>
-
+<main>
 <div class="container-fluid">
 <div class="row">
 <% @hospitals.each do |hospital| %>
-  <div class="col-md-3">
+  <div class="col-md-4">
     <div class="thumbnail">
         <%= link_to image_tag(hospital.image), hospital %>
         <div class="caption">
-          <p> <%= link_to hospital.name, hospital %></p><br>
+          <h5> <%= link_to hospital.name, hospital %></h5><br>
           <% if hospital.reviews.count == 0 %>
             0 Reviews
-          <% else %>
+          <% elsif hospital.reviews.count == 1 %>
             <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
-            <%= hospital.length %> <%= "Review(s)" %>
-
+            1 Review
+            <% else %>
+            <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+            <%= hospital.length %> <%= "Reviews" %>
           <% end %>
     </div>
   </div>
@@ -52,7 +54,7 @@
 <% end %>
  </div>
  
-
+</main>
 
 
 <br>

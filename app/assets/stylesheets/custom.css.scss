@@ -117,8 +117,9 @@ h2 {
 	border-left: 0 !important;
 }
 .hospitalList {
-	width: 80%;
+	width: 60%;
 	margin: auto;
+	display: block;
 }
 #hospitalBanner {
 	color: #7a0101;
@@ -129,14 +130,36 @@ h2 {
 	text-shadow: 1px 1px #eee;
 }
 .thumbnail {
-	border: 1px solid #eee;
+	border: 0;
+	padding: 0;
 }
-.thumbnail a>img{
-	height: 100%;
-	width: 100%;
+.row {
+    display: table;
 }
-.thumbnail caption {
-	color: black;
+
+[class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.caption {
+	color: black !important;
+	border: 1px solid #e2e6e9;
+	position: relative;
+}
+.caption >p, .caption>div {
+	margin: 0;
+}
+.thumbnail .caption h5 {
+    margin: 0;
+    padding-bottom: 0;
+    font-weight: 400;
+    color: #00aeff;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .hospital_container {
 	position: relative;
