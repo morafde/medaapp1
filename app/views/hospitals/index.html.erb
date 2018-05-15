@@ -60,7 +60,7 @@
 <br>
 
 <% if user_signed_in? && current_user.admin? %>
-  <%= link_to 'New Hospital', new_hospital_path, class: "btn btn-link" %>
+  <%= link_to 'New Hospital', new_hospital_path, class: "btn btn-primary btn-lg" %>
 <% end %>
 
 <!--Start of Tawk.to Script-->
@@ -74,6 +74,7 @@ s1.src='https://embed.tawk.to/592da976b3d02e11ecc677a1/default';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
+s1.style.background = 'yellow';
 })();
 </script>
 <!--End of Tawk.to Script-->
