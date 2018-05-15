@@ -153,9 +153,12 @@ h2 {
     overflow: hidden;
     white-space: nowrap;
 }
-h4 a {
-	color: brown;
+h4 {
 	margin-bottom: 0;
+}
+h4 a {
+	color: brown !important;
+	
 }
 h4 a:hover {
 	text-decoration: none;
@@ -199,9 +202,6 @@ h4 a:hover {
 .hospital_container:hover .overlay {
 	opacity: 1;
 }
-
-
-
 /* Sign up page starts here */
 .sign-up-page {
 	width: 50% !important;
