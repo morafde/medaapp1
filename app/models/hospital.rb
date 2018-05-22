@@ -5,7 +5,7 @@ class Hospital < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  # searchkick
+   searchkick
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
@@ -20,6 +20,9 @@ class Hospital < ApplicationRecord
   def length
   	reviews.count(:rating)
   end	
+
+
+
 
 
 	#validates :name, :address, :phone, presence: true
