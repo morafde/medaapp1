@@ -1,52 +1,46 @@
-<%= form_tag search_hospitals_path, method: :get, class: "form-group" do %>
-<div class="input-group">
-<div class="input-group-addon">Search and Review</div>
-        <p>
-          <%= text_field_tag :search, params[:search],  class: "form-control formInput", placeholder: "Hospital Name" %>
-          <%# <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
-        </p>
-</div>
-  <% end %>
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Website</th>
-      <% if user_signed_in? && current_user.admin? %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hospitals.each do |hospital| %>
-      <tr>
-        <td><%= link_to hospital.name, hospital %><br>
-          <%= link_to image_tag(hospital.image), hospital %><br>
-          <% if hospital.reviews.count == 0 %>
-            No reviews yet, be the first to write one
-          <% else %>
-            <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
-
-            <%= hospital.length %> <%= "Review(s)" %>
-
-          <% end %></td>
-        </td> 
-        <td><%= hospital.address %></td>
-        <td><%= hospital.phone %></td>
-        
-        </td>
-        <td><%= link_to hospital.website, hospital.website %></td>
-        <% if user_signed_in? && current_user.admin? %>
-         <td><%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %></td>
-          <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
-        <% end%>
-      </tr>
+ <div class="table-responsive table-box card"> 
+  <%= form_tag search_hospitals_path, method: :get, class: "form-group" do %>
+  <div class="input-group">
+    <div class="input-group-addon">Search and Review</div>
+          <p>
+            <%= text_field_tag :search, params[:search],  class: "form-control formInput", placeholder: "Hospital Name" %>
+          </p>
+  </div>
     <% end %>
-  </tbody>
-</table>
+
+    <div class="container hospital_display">
+      <% @hospitals.each do |hospital| %>
+        <div class="row">
+            <div class="col-sm-6">                
+              <%= link_to image_tag(hospital.image), hospital, class: "responsive" %>
+            </div>
+              <div class="col-sm-6">
+                  <%= link_to hospital.name, hospital %><br>
+                  <%= hospital.address %><br>
+                  <%= hospital.phone %><br>
+                  <%= link_to hospital.website, hospital.website %>
+                  <%# Checks for admin %>
+                  <% if user_signed_in? && current_user.admin? %>
+                    <%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %>
+                    <%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+                  <% end%>
+                  <%# Rating %>
+                  <% if hospital.reviews.count == 0 %>
+                    No reviews yet, be the first to write one
+                  <% elsif hospital.reviews.count == 1 %>
+                  <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+                    1 Review
+                  <% else %>
+                  <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+                    <%= hospital.length %> <%= "Reviews" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 <br>
 
 <script>

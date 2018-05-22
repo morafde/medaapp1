@@ -5,7 +5,7 @@ class Hospital < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  # searchkick
+   searchkick
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|

@@ -202,7 +202,6 @@ h4 a:hover {
 .overlay > p {
 	margin: 0 !important;
 }
-  
 .hospital_container:hover .overlay {
 	opacity: 1;
 }
@@ -270,3 +269,17 @@ h4 a:hover {
 //
 
 /* Sign in page ends here */
+.btn-special {
+    width: 200px;
+    margin: 0 auto;
+}
+.table-box {
+	width: 80%;
+	margin: auto;
+}
+.responsive>img {
+	width: 100%;
+}
+.hospital_display>row {
+	margin: 10px;
+}
