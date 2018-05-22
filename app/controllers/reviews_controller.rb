@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:edit, :update, :destroy]
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :set_hospital
   before_action :authenticate_user!
   before_action :check_user, only: [:edit, :update, :destroy]
