@@ -10,15 +10,15 @@
 
     <div class="container hospital_display">
       <% @hospitals.each do |hospital| %>
-        <div class="row">
-            <div class="col-sm-6">                
+        <div class="row hospital-row">
+            <div class="col-sm-3">                
               <%= link_to image_tag(hospital.image), hospital, class: "responsive" %>
             </div>
-              <div class="col-sm-6">
-                  <%= link_to hospital.name, hospital %><br>
-                  <%= hospital.address %><br>
-                  <%= hospital.phone %><br>
-                  <%= link_to hospital.website, hospital.website %>
+              <div class="col-sm-9">
+                  <%= link_to hospital.name, hospital, class: "hospital_name" %><br>
+                  <i class="fa fa-map-marker" aria-hidden="true"> &nbsp; <%= hospital.address%></i><br>
+                  <i class="fa fa-phone-square" aria-hidden="true"> &nbsp; <%= hospital.phone %></i><br>
+                  <i class="fa fa-globe" aria-hidden="true"> &nbsp; <%= link_to hospital.website, hospital.website %></i>
                   <%# Checks for admin %>
                   <% if user_signed_in? && current_user.admin? %>
                     <%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %>
@@ -35,8 +35,8 @@
                     <%= hospital.length %> <%= "Reviews" %>
                 <% end %>
               </div>
-            </div>
-          <% end %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>

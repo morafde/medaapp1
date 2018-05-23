@@ -147,16 +147,6 @@ h2 {
 .caption >p, .caption>div {
 	margin: 0;
 }
-.thumbnail .caption h5 {
-    margin: 0;
-    padding-bottom: 0;
-    font-weight: 400;
-    color: #00aeff;
-    font-size: 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
 h4 {
 	margin-bottom: 0;
 }
@@ -175,7 +165,9 @@ h4 a:hover {
 .hospital_images {
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 115px;
+	text-align: center;
+	overflow: hidden;
 }
   
 .overlay {
@@ -269,6 +261,7 @@ h4 a:hover {
 //
 
 /* Sign in page ends here */
+/* Search page starts here */
 .btn-special {
     width: 200px;
     margin: 0 auto;
@@ -281,9 +274,27 @@ h4 a:hover {
 	width: 100%;
 	border-radius: 5px;
 }
-.hospital_display>.row {
+.hospital-row {
 	margin: 10px;
 	background-color: white;
 	padding: 10px 0;
 	border-radius: 5px;
+	height: 50%;
 }
+.fa {
+	font-weight: bold !important;
+	color: #333;
+}
+.hospital_name {
+	font-family: 'Bree Serif';
+	font-size: 28px;
+	color: brown;
+}
+.hospital_address {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.hospital_name:hover {
+	text-decoration: none;
+	color: #7a0101;
+}
+/* Start page end here */
