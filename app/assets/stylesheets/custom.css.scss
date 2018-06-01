@@ -267,7 +267,7 @@ h4 a:hover {
     margin: 0 auto;
 }
 .table-box {
-	width: 80%;
+	width: 70%;
 	margin: auto;
 }
 .responsive>img {
@@ -280,15 +280,16 @@ h4 a:hover {
 	padding: 10px 0;
 	border-radius: 5px;
 	height: 50%;
+	line-height: 150%;
 }
 .fa {
 	font-weight: bold !important;
-	color: #333;
+	color: #555;
 }
 .hospital_name {
 	font-family: 'Bree Serif';
 	font-size: 28px;
-	color: brown;
+	color: #14acf2;
 }
 .hospital_address {
 	font-family: Arial, Helvetica, sans-serif;
@@ -297,4 +298,46 @@ h4 a:hover {
 	text-decoration: none;
 	color: #7a0101;
 }
-/* Start page end here */
+.hospital_website>a {
+	color: #333;
+}
+.hospital_website>a:hover {
+	color: #14acf2;
+	text-decoration: none;
+}
+.dock-right {
+	margin: 10px;
+	border: 2px solid #ddd;
+	height: 650px;
+}
+.star-rating>img {
+	width: 15px;
+}
+#formInputSearch {
+	background: white;
+	width: 40%;;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: auto;
+	height: 40px;
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+	border-top-left-radius: 5px !important;
+	border-bottom-left-radius: 5px !important;
+	font-size: 14px;
+}
+.form-inline {
+	width: 100%;
+	background: #fff;
+	margin: auto;
+}
+.form-inline, .form-group{
+	display: block !important;
+	padding: 5px 50px;
+}
+.form-group>label {
+	font-weight: 400;
+    font-size: 20px;
+	color: #14acf2;
+	margin: auto;
+}
+/* Search page end here */
