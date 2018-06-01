@@ -315,7 +315,7 @@ h4 a:hover {
 }
 #formInputSearch {
 	background: white;
-	width: 40%;;
+	width: 30%;;
 	font-family: 'Source Sans Pro', sans-serif;
 	margin: auto;
 	height: 40px;
@@ -323,12 +323,14 @@ h4 a:hover {
 	border-bottom-right-radius: 5px !important;
 	border-top-left-radius: 5px !important;
 	border-bottom-left-radius: 5px !important;
+	border-right: 0;
+	border-left: 0;
 	font-size: 14px;
 }
 .form-inline {
 	width: 100%;
 	background: #fff;
-	margin: auto;
+	text-align: center;
 }
 .form-inline, .form-group{
 	display: block !important;
