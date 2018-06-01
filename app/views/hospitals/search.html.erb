@@ -1,42 +1,53 @@
-<div class="table-responsive table-box card"> 
-  <%= form_tag search_hospitals_path, method: :get, class: "form-group" do %>
-  <div class="input-group">
-    <div class="input-group-addon">Search and Review</div>
-          <p>
-            <%= text_field_tag :search, params[:search],  class: "form-control formInput", placeholder: "Hospital Name" %>
-          </p>
-  </div>
-    <% end %>
-
+ <div class="row">
+<div class="col-sm-0"> </div>
+<div class="col-sm-12">
+<%= form_tag search_hospitals_path, method: :get, class: "form-inline" do %>
+    <div class="form-group">
+      <label for="formInputSearch">Find the best hospital around you.</label>
+        <%= text_field_tag :search, params[:search],  class: "form-control formInput", id: "formInputSearch", placeholder: "Eye, Maternity" %>
+    </div>
+  <% end %>
+</div>
+<div class="col-sm-0"> </div>
+ </div>
+ 
+ <div class="table-box">
     <div class="container hospital_display">
-      <% @hospitals.each do |hospital| %>
-        <div class="row">
-            <div class="col-sm-6">                
-              <%= link_to image_tag(hospital.image), hospital, class: "responsive" %>
-            </div>
-              <div class="col-sm-6">
-                  <%= link_to hospital.name, hospital %><br>
-                  <%= hospital.address %><br>
-                  <%= hospital.phone %><br>
-                  <%= link_to hospital.website, hospital.website %>
-                  <%# Checks for admin %>
-                  <% if user_signed_in? && current_user.admin? %>
-                    <%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %>
-                    <%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
-                  <% end%>
-                  <%# Rating %>
-                  <% if hospital.reviews.count == 0 %>
-                    No reviews yet, be the first to write one
-                  <% elsif hospital.reviews.count == 1 %>
-                  <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
-                    1 Review
-                  <% else %>
-                  <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
-                    <%= hospital.length %> <%= "Reviews" %>
-                <% end %>
+      <div class="row">
+      <div class="col-md-7">
+        <% @hospitals.each do |hospital| %>
+          <div class="row hospital-row">
+              <div class="col-sm-6">                
+                <%= link_to image_tag(hospital.image), hospital, class: "responsive" %>
               </div>
-            </div>
-          <% end %>
+                <div class="col-sm-6">
+                    <%= link_to hospital.name, hospital, class: "hospital_name" %><br>
+                    <i class="fa fa-map-marker" aria-hidden="true"> &nbsp; <%= hospital.address%></i><br>
+                    <i class="fa fa-phone-square" aria-hidden="true"> &nbsp; <%= hospital.phone %></i><br>
+                    <i class="fa fa-globe hospital_website" aria-hidden="true"> &nbsp; <%= link_to hospital.website, hospital.website %></i>
+                    <%# Checks for admin %>
+                    <% if user_signed_in? && current_user.admin? %>
+                      <%= link_to 'Edit', edit_hospital_path(hospital), class: "btn btn-link" %>
+                      <%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+                    <% end%>
+                    <%# Rating %>
+                    <% if hospital.reviews.count == 0 %>
+                      No reviews yet, be the first to write one
+                    <% elsif hospital.reviews.count == 1 %>
+                    <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+                      1 Review
+                    <% else %>
+                    <div class="star-rating" data-score= <%= hospital.avg_rating %> ></div>
+                      <%= hospital.length %> <%= "Reviews" %>
+                  <% end %>
+                </div>
+          </div>
+        <% end %>
+        </div>
+        <div class="col-md-4 dock-right">
+        <p> Side------bar </p>
+        </div>
+        </div>
       </div>
     </div>
   </div>

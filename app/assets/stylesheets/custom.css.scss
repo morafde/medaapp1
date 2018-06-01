@@ -147,16 +147,6 @@ h2 {
 .caption >p, .caption>div {
 	margin: 0;
 }
-.thumbnail .caption h5 {
-    margin: 0;
-    padding-bottom: 0;
-    font-weight: 400;
-    color: #00aeff;
-    font-size: 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
 h4 {
 	margin-bottom: 0;
 }
@@ -175,7 +165,9 @@ h4 a:hover {
 .hospital_images {
 	display: block;
 	width: 100%;
-	height: auto;
+	height: 115px;
+	text-align: center;
+	overflow: hidden;
 }
   
 .overlay {
@@ -269,17 +261,85 @@ h4 a:hover {
 //
 
 /* Sign in page ends here */
+/* Search page starts here */
 .btn-special {
     width: 200px;
     margin: 0 auto;
 }
 .table-box {
-	width: 80%;
+	width: 70%;
 	margin: auto;
 }
 .responsive>img {
 	width: 100%;
+	border-radius: 5px;
 }
-.hospital_display>row {
+.hospital-row {
 	margin: 10px;
+	background-color: white;
+	padding: 10px 0;
+	border-radius: 5px;
+	height: 50%;
+	line-height: 150%;
 }
+.fa {
+	font-weight: bold !important;
+	color: #555;
+}
+.hospital_name {
+	font-family: 'Bree Serif';
+	font-size: 28px;
+	color: #14acf2;
+}
+.hospital_address {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.hospital_name:hover {
+	text-decoration: none;
+	color: #7a0101;
+}
+.hospital_website>a {
+	color: #333;
+}
+.hospital_website>a:hover {
+	color: #14acf2;
+	text-decoration: none;
+}
+.dock-right {
+	margin: 10px;
+	border: 2px solid #ddd;
+	height: 650px;
+}
+.star-rating>img {
+	width: 15px;
+}
+#formInputSearch {
+	background: white;
+	width: 30%;;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: auto;
+	height: 40px;
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+	border-top-left-radius: 5px !important;
+	border-bottom-left-radius: 5px !important;
+	border-right: 0;
+	border-left: 0;
+	font-size: 14px;
+}
+.form-inline {
+	width: 100%;
+	background: #fff;
+	text-align: center;
+}
+.form-inline, .form-group{
+	display: block !important;
+	padding: 5px 50px;
+}
+.form-group>label {
+	font-weight: 400;
+    font-size: 20px;
+	color: #14acf2;
+	margin: auto;
+}
+/* Search page end here */

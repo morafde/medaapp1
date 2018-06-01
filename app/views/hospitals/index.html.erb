@@ -35,8 +35,8 @@
 <div class="row">
 <% @hospitals.each do |hospital| %>
   <div class="col-md-4 col-xs-6">
-    <div class="thumbnail">
-        <%= link_to image_tag(hospital.image), hospital %>
+    <div class="thumbnail hospital_container">
+        <%= link_to image_tag(hospital.image), hospital, class: "hospital_images" %>
         <div class="caption">
           <h4> <%= link_to hospital.name, hospital %></h4><br>
           <% if hospital.reviews.count == 0 %>
