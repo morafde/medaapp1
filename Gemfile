@@ -46,3 +46,4 @@ gem 'omniauth-facebook'
 gem 'social-share-button'
 gem 'roo'
 gem 'table_print'
+gem "rubyzip", ">= 1.2.2"
